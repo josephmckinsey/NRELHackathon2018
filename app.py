@@ -8,6 +8,9 @@ import matplotlib
 import yaml
 import requests
 import re
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 
 # Load in config.yaml file
 stream = open('config.yml', 'r')
@@ -37,14 +40,54 @@ def get_residential_utility():
 
 def total_discounting(t, degradation):
     present_value_discount = config['present_value_discounting']
-    return np.exp(-(degradation + present_value_discount)*t)
+    return ((1 + degradation)*present_value_discount)**(t / 365)
 
 
 #utility = re.sub("[^0-9|.]", "", config['utility_bill'])
 
 
-def predicted_output():
-    pd.read_csv(config['past_year'], skiprows=5)
+def predicted_output(df, t):
+    base_efficiency = config['base_efficiency']
+    past_year = np.array(pd.read_csv(config['past_year'], skiprows=4))
+    day = df.index[-1].month*30 + df.index[-1].day
+    return past_year[(day + t) % 365]*base_efficiency
+    #utility = re.sub("[^0-9|.]", "", config['utility_bill'])
+
+
+def full_output():
+    df, rd = average_degradation()
+    t = np.array(range(0, (20*365)))
+
+    end = (1 + rd)**((df.index[-1] - df.index[0])
+                                     .total_seconds() / (3600.0*24*365))
+
+    better_output = predicted_output(df, t)
+
+    normal_output = predicted_output(df, t)*end
+
+    replace_profits = (-config['cost_of_new_solar'] +
+                     (better_output*total_discounting(t, rd)*
+                      get_residential_utility()).sum())
+
+    normal_profits = normal_output*total_discounting(t, rd)*get_residential_utility()
+
+    return (normal_profits.sum(), replace_profits)
+
+
+
+def estimate_base(df, degradation):
+    length = len(df)
+    start = length // 2 - length // 10
+    end = length // 2 + length // 10
+    time_delta = pd.to_timedelta(df.power.index.freq).total_seconds()/(3600.0)
+
+    average_middle = df.energy[start:end].mean()
+    to_edges = time_delta*(end - length//2) / (24*365)
+
+    start_energy = average_middle*(1 - degradation)**to_edges
+    end_energy = average_middle*(1 + degradation)**to_edges
+
+    return (start_energy, end_energy)
 
 
 def average_degradation():
@@ -95,8 +138,6 @@ def average_degradation():
     df_temp = pvlib.pvsystem.sapm_celltemp(df.poa, df.wind, df.Tamb, model = meta['temp_model'])
     df['Tcell'] = df_temp.temp_cell
 
-    print(df.energy[1000:1010])
-
     # Specify the keywords for the pvwatts model
     pvwatts_kws = {"poa_global" : df.poa,
                 "P_ref" : meta['pdc'],
@@ -130,6 +171,44 @@ def average_degradation():
     yoy_rd, yoy_ci, yoy_info = rdtools.degradation_year_on_year(daily, confidence_level=68.2)
 
     # yoy_rd is mean degradation rate per year.
-    return yoy_rd
+    return (df, 0.01*yoy_rd)
 
-average_degradation()
+print(full_output())
+
+# msg = MIMEMultipart('alternative')
+# msg['Subject'] = "Daily Report"
+# msg['From'] = me
+# msg['To'] = you
+
+# html = """\
+# <html>
+#   <head>
+#   </head>
+#   <body>
+#     <div align="center"><h2>{0}</h2>
+#     {1}
+#     </div>
+#     {2}
+#     {3}
+#     {4}
+#     {5}
+#     {6}
+#     {7}
+#     {8}
+#     {9}
+#   </body>
+# </html>
+# """.format(datestring,school_html,forecast_html,apod_html,xkcd_html,smbc_html,buttersafe_html,PDL_html,EC_html,dino_html)
+
+# part1 = MIMEText(html, 'plain')
+# part2= MIMEText(html, 'html')
+
+# msg.attach(part1)
+# msg.attach(part2)
+
+# mail = smtplib.SMTP('smtp.gmail.com', 587)
+# mail.ehlo()
+# mail.starttls()
+# mail.login(me, 'josephjoseph')
+# mail.sendmail(me,you,msg.as_string())
+# m

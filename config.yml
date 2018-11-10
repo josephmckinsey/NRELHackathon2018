@@ -1,5 +1,5 @@
 real_time_data: data/84-Site_12-BP-Solar.csv
-past_year: data/84-Site_12-BP-Solar.csv
+past_year: data/dailyInsolation.csv
 
 latitude: -23.762028
 longitude: 133.874886
@@ -10,6 +10,8 @@ tilt: 20
 pdc: 5100.0
 temp_model: open_rack_cell_polymerback
 
+base_efficiency: 0.15
+
 start_date: 2010-11-10
 end_date: 2018-11-10
 
@@ -17,5 +19,5 @@ api_key: zm83BYCLpsfGS1TqDwFOMMRb47gcMJ9KGqoSggdk
 
 present_value_discounting: 0.98
 solar_panel_area: 30
-cost_of_new_solar: $15000
+cost_of_new_solar: 15000
 #wattage_of_new_solar: 6000
