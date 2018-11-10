@@ -1,0 +1,19 @@
+real_time_data: data/84-Site_12-BP-Solar.csv
+
+latitude: -23.762028
+longitude: 133.874886
+timezone: Australia/North
+tempco : -0.005
+azimuth: 0
+tilt: 20
+pdc: 5100.0
+temp_model: open_rack_cell_polymerback
+
+start_date: 2010-11-10
+end_date: 2018-11-10
+
+utility_company: wer
+api_key: zm83BYCLpsfGS1TqDwFOMMRb47gcMJ9KGqoSggdk
+
+discounting_factor: 0.95
+solar_panel_area: 5
