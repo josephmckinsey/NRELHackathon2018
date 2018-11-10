@@ -20,12 +20,13 @@ utility = requests.get('https://developer.nrel.gov/api/utility_rates/v3.json',
 
 try:
     residential_price = utility.json()['outputs']['residential']
-except requests.RequestException as e:
+except e:
     print('Utility API Failed: Error Code {}'.format(utility.status_code))
     print(e)
     print()
     print('Using $0.10 / kWhr')
     residential_price = 0.1
+
 
 # pd.plotting.register_matplotlib_converters()
 # matplotlib.rcParams.update({'font.size': 12,
