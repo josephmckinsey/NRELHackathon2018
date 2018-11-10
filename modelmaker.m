@@ -1,4 +1,4 @@
-data = load('solarsample2016.csv');
+data = load('data/solarsample2016.csv');
 ghi = reshape(data(:,6), [24 365])';
 dailyData = sum(ghi, 2)/1000;
 
@@ -10,4 +10,4 @@ dailyModel = real(ifft(modelFreq));
 plot(1:365, dailyData, '*')
 hold on
 plot(1:365, dailyModel, 'r');
-save('dailyInsolation.csv', 'dailyModel')
+save('data/dailyInsolation.csv', 'dailyModel')
