@@ -20,7 +20,11 @@ utility = requests.get('https://developer.nrel.gov/api/utility_rates/v3.json',
 
 try:
     residential_price = utility.json()['outputs']['residential']
-except e:
+    if (type(residential_price) is not int):
+        print('No Utility data Available')
+        residential_price = 0.1
+
+except Exception as e:
     print('Utility API Failed: Error Code {}'.format(utility.status_code))
     print(e)
     print()
