@@ -7,6 +7,7 @@
   http://dkasolarcentre.com.au/historical-data/download, date accessed:
   09/11/2018.
 
+You should download dataset 12 into the folder `data` and then extract it.
 
 * D. Jordan, C. Deline, S. Kurtz, G. Kimball, M. Anderson, "Robust PV
   Degradation Methodology and Application", IEEE Journal of Photovoltaics, 2017

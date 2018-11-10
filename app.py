@@ -13,17 +13,26 @@ stream = open('config.yml', 'r')
 config = yaml.load(stream)
 file_name = config['real_time_data']
 
-# utility = requests.get('https://developer.nrel.gov/api/utility_rates/v3.json',
-#                        params={'api_key': config['api_key'],
-#                                'lat': config['latitude'],
-#                                'lon': config['longitude']})
+utility = requests.get('https://developer.nrel.gov/api/utility_rates/v3.json',
+                       params={'api_key': config['api_key'],
+                               'lat': config['latitude'],
+                               'lon': config['longitude']})
 
-pd.plotting.register_matplotlib_converters()
-matplotlib.rcParams.update({'font.size': 12,
-                           'figure.figsize': [4.5, 3],
-                           'lines.markeredgewidth': 0,
-                           'lines.markersize': 2
-                           })
+try:
+    residential_price = utility.json()['outputs']['residential']
+except requests.RequestException as e:
+    print('Utility API Failed: Error Code {}'.format(utility.status_code))
+    print(e)
+    print()
+    print('Using $0.10 / kWhr')
+    residential_price = 0.1
+
+# pd.plotting.register_matplotlib_converters()
+# matplotlib.rcParams.update({'font.size': 12,
+#                            'figure.figsize': [4.5, 3],
+#                            'lines.markeredgewidth': 0,
+#                            'lines.markersize': 2
+#                            })
 
 df = pd.read_csv(file_name)
 df = df.rename(columns = {
