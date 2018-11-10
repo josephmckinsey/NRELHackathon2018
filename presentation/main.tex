@@ -1,0 +1,437 @@
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\documentclass[10pt]{beamer}
+
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+%\usetheme{metropolis}
+%\usetheme[numbering=none,progressbar=frametitle,block=fill]{metropolis}
+%    \setbeamertemplate{frametitle}
+%      {\begin{centering}\smallskip
+%      \insertframetitle\par
+%       \smallskip\end{centering}}
+%    \setbeamertemplate{itemize item}{$\bullet$}
+%    \setbeamertemplate{navigation symbols}{}
+%    \setbeamertemplate{footline}[text line]{%
+%        \hfill\strut{%
+%            \scriptsize\sf\color{black!60}%
+%            \quad\insertframenumber
+%        }%
+%        \hfill
+%    }
+
+    % Define some colors:
+%    \definecolor{DarkFern}{HTML}{407428}
+%    \definecolor{DarkCharcoal}{HTML}{4D4944}
+%    \colorlet{Fern}{DarkFern!85!white}
+%    \colorlet{Charcoal}{DarkCharcoal!110!white}
+%    \colorlet{LightCharcoal}{Charcoal!50!white}
+%    \colorlet{AlertColor}{orange!80!black}
+%    \colorlet{DarkRed}{red!70!black}
+%    \colorlet{DarkBlue}{blue!70!black}
+%    \colorlet{DarkGreen}{green!70!black}
+     
+%    % Use the colors:
+%    \setbeamercolor{title}{fg=Fern}
+%    \setbeamercolor{frametitle}{fg=Fern}
+%    \setbeamercolor{normal text}{fg=Charcoal}
+%    \setbeamercolor{block title}{fg=black,bg=Fern!30!white}
+%    \setbeamercolor{block body}{fg=black,bg=Fern!20!white}
+%    \setbeamercolor{alerted text}{fg=AlertColor}
+%    \setbeamercolor{itemize item}{fg=Charcoal}
+
+\usecolortheme{mines}
+
+\setbeamercovered{dynamic}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{stackengine}
+\usepackage{media9}
+\usepackage{tipa}
+
+
+\setbeamersize{text margin left=1cm,text margin right=1cm} 
+
+\title[Emmy Noether]{The Great Mathematician Emmy Noether}
+
+% A subtitle is optional and this may be deleted
+\subtitle{(1882--1935)}
+
+%\titlegraphic{\includegraphics{Noether}}
+
+\author[J. McKinsey]{\includegraphics[scale=0.8]{Noether} \\ \vspace{1em} Joseph
+  McKinsey \vspace{-2em}}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Colorado School of Mines] % (optional, but mostly needed)
+%{
+%  \inst{1}%
+%  Department of Computer Science\\
+%  University of Somewhere
+%  \and
+%  \inst{2}%
+%  Department of Theoretical Philosophy\\
+%  University of Elsewhere}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{\today}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Famous Mathematicians}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+%\pgfdeclareimage[height=0.5cm]{university-logo}{Noether}
+%\logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Introduction}
+\begin{frame}{Introduction}
+Emmy Noether was a German mathematician in G\"ottingen University in the early
+1900s.
+
+\begin{alertblock}{Pronunciation}
+\begin{center} % IPA is trash.
+\large \begin{IPA}
+'n\o:t5
+\end{IPA}
+\end{center}
+Not as in ``another''. Pronounce it like neuter, but with a long ``u'' sound. \cite{wikipedia}
+\end{alertblock}
+
+\begin{block}{Contributions}
+\begin{enumerate}
+\item Abstract mathematics
+\item Noncommunicable algebra
+\item Theoretical physics
+\end{enumerate}
+\end{block}
+
+Described as ``fat, rough, and loud, but so kind, humorous and sociable that all
+know new her loved her'' \cite{biography}.
+\end{frame}
+
+
+\section{Biography}
+\subsection{Early Life}
+\begin{frame}{Early Life}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{itemize}
+\item Born in Erlangen, Germany on March 23rd, 1882, to a Jewish family.
+\item Not a child genius of prodigy.
+\item Two slightly younger brothers and one much younger brother.
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\textwidth]{family}
+    \caption{Noether, Emmy; Noether, Alfred; Noether, Fritz; Noether, Robert --
+Annotation: vor 1918 -- Source: Konrad Jacobs, Erlangen \cite{wikipedia}. }
+\end{figure}
+\end{column}
+\begin{column}{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{Location}
+\scriptsize Modified from Map by Karte: NordNordWest, Lizenz: Creative Commons by-sa-3.0 de, CC BY-SA 3.0 de, \url{https://commons.wikimedia.org/w/index.php?curid=35392837}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{University Education}
+\begin{frame}{University Education}
+\begin{itemize}
+\item Since woman were unable to attend, Noether had to audit classes at the
+university of Erlangen.
+\item She graduated from a \textit{Realgymnasium} in Nuremberg \cite{wikipedia}.
+\end{itemize}
+\begin{block}{Graduate Program}
+\begin{itemize}
+\item Noether returned to the University of Erlangen after the prohibition was lifted.
+\item In 1907, she wrote her dissertation ``\"Uber die Bildung des Formensystems
+der tern\"aren biquadratischen Form'' (On Complete Systems of Invariants for Ternary Biquadratic Forms, 1907) \cite{biography}.
+\item For her dissertation, over \(300\) different forms of invariance were
+listed as her supervisor suggested to her. At the same time, David Hilbert's
+work was making this expensive process largely irrelevant.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Professorship}
+\begin{frame}{Teaching at the University of Erlangen}
+\begin{itemize}
+\item From 1908 to 1915, she taught at the University of Erlangen without pay. Noether was introduced to some of David Hilbert's work, and began working on abstract algebra.
+
+\item Noether was eventually invited to teach at the prestigious University of G\"ottingen by David Hilbert.
+\end{itemize}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Despite the university administration's wishes, she taught there from 1915,
+where she was allowed to enter \textit{habilitation} (tenure) in 1919.
+
+\item At G\"ottingen, she produced most of her work on abstract algebra, as
+well as proving Noether's Theorem, an important symmetry result in theoretical
+physics.
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{gottingen}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Fate}
+\begin{frame}{Fate}
+\begin{itemize}
+\item Emmy Noether never married or had children.
+
+\item After the Nazi Party's ``Law for the Restoration of the
+Professional Civil Service'', she was exiled out of the university.
+
+\item She left for America in 1933 and died two years later in 1935 in surgery
+\cite{biography}.
+\end{itemize}
+
+\begin{block}{Excerpt from Einstein's Obituary of Emmy Noether}
+``Fr\"aulein Noether was the most significant creative mathematical genius thus far produced since the higher education of women began.'' \cite{einstein}
+\end{block}
+\end{frame}
+
+
+\section{Mathematical Contributions}
+\begin{frame}{Mathematical Contributions}
+\begin{block}{Noether's Theorem}
+For every physical conservation, there is a differentiable symmetry.
+
+For example, the Lagrangian formulation of classical mechanics provides the corresponding symmetry for the conversation of energy \cite{biography}.
+\end{block}
+
+Over the course of her life, she worked on many developing mathematical fields \cite{biography}.
+\begin{enumerate}
+\item Algebraic invariance
+\item Abstract algebra -- primarily theory of rings.
+\item Non-commutative algebra and arithmetic.
+\end{enumerate}
+
+\begin{alertblock}{Potentially her greatest contribution}
+Noether was also known for her consistently invaluable advice. 
+
+Often, she would inspire students with well-placed ideas and improvements,
+rarely taking credit for her own work \cite{wikipedia}.
+\end{alertblock}
+\end{frame}
+
+\section{Interesting Facts} 
+\begin{frame}{Interesting Facts}
+Striving against the academic norms, Noether pursued a fervent passion in
+mathematics, often with a complete disregard for society's restrictions:
+
+\begin{itemize}
+    \item Sending postcards continuing trains of thought on mathematics to associate Ernst Fischer.
+    \item Becoming so passionate about mathematics as to forget:
+    \begin{enumerate}
+        \item table-manners
+        \item food
+        \item frazzled hair
+        \item and others.
+    \end{enumerate}
+    \item Attending classes at a college you cannot attend.
+    \item Teaching at a university for no salary.
+    \item Allowing on many occasions other people to publish her ideas.
+    \item Leaving half of her small salary to her nephew.
+\end{itemize}
+
+\begin{alertblock}{Personal Favorite}
+Fast-paced lectures often confusing to outsiders. So confusing, one student said of another observer, ``The enemy has been defeated; he has cleared out.'' \cite{biography}.
+\end{alertblock}
+\end{frame}
+
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+Emmy Noether struggled immensely to leave an impact on the world of mathematics.
+
+\vspace{1em}
+Her own work, either directly or indirectly, has reached many diverse fields.
+
+\vspace{1em}
+It is likely her unexpected death robbed the world of many further great achievements.
+
+\vspace{1em}
+She will be remembered not only for her mathematics, but for
+\begin{itemize}
+\item persistence
+\item courage
+\item constant advice
+\item and finally as an inspiration to the rest of us.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Questions}
+\begin{center}
+\Huge Questions?
+\end{center}
+\end{frame}
+
+% You can reveal the parts of a slide one at a time
+% with the \pause command:
+% \begin{frame}{What makes a good presentation?}
+%   \begin{itemize}
+%   \item Flow
+%   \item Engagement - audience thinks
+%   \item Level of difficulty / accessibility. (Background)
+%   \item Voice (fluctuation, projection)
+%   \item Eye contact
+%   \item Figures (labeled, explained)
+%   \item Movement, hand gestures
+%   \item Amount of math / equations
+%   \item Amount of text on slides (they aren't for you to read!) It's a queue.
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Actual Slides}
+%   \begin{itemize}
+%   \item Time : \(15\) min. \(\approx 15\) slides. One minute to each slide.
+%   \begin{itemize}
+%       \item extra at end to anticipate questions
+%       \item 2 minutes for transitions and questions.
+%   \end{itemize}
+%   \item Use story a narrative. Strife and conflict \(\to\) why should I care?
+%   \item Dress? -- \(>\) credibility.
+%   \end{itemize}
+% \end{frame}
+
+%\section{Second Main Section}
+
+%\subsection{Another Subsection}
+
+% \begin{frame}{Blocks}
+% \begin{block}{Block Title}
+% You can also highlight sections of your presentation in a block, with it's own title
+% \end{block}
+% \begin{theorem}
+% There are separate environments for theorems, examples, definitions and proofs.
+% \end{theorem}
+% \begin{example}
+% Here is an example of an example block.
+% \end{example}
+% \end{frame}
+
+% Placing a * after \section means it will not show in the
+% outline or table of contents.
+
+\begin{frame}[allowframebreaks]
+    \frametitle{References}
+    \bibliographystyle{siam}
+    \bibliography{new}
+\end{frame}
+
+
+% All of the following is optional and typically not needed. 
+%\appendix
+%\section<presentation>*{\appendixname}
+%\subsection<presentation>*{For Further Reading}
+
+% \begin{frame}[allowframebreaks]
+%   \frametitle<presentation>{For Further Reading}
+    
+%   \begin{thebibliography}{10}
+    
+%   \beamertemplatebookbibitems
+%   % Start with overview books.
+
+%   \bibitem{Author1990}
+%     A.~Author.
+%     \newblock {\em Handbook of Everything}.
+%     \newblock Some Press, 1990.
+ 
+    
+%   \beamertemplatearticlebibitems
+%   % Followed by interesting articles. Keep the list short. 
+
+%   \bibitem{Someone2000}
+%     S.~Someone.
+%     \newblock On this and that.
+%     \newblock {\em Journal of This and That}, 2(1):50--100,
+%     2000.
+%   \end{thebibliography}
+% \end{frame}
+
+\end{document}

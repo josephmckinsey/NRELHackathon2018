@@ -14,7 +14,7 @@ stream = open('config.yml', 'r')
 config = yaml.load(stream)
 
 
-def get_residential_price():
+def get_residential_utility():
     utility = requests.get('https://developer.nrel.gov/api/utility_rates/v3.json',
                         params={'api_key': config['api_key'],
                                 'lat': config['latitude'],
@@ -35,23 +35,19 @@ def get_residential_price():
     return residential_price
 
 
-def total_discounting(t, degredation):
+def total_discounting(t, degradation):
     present_value_discount = config['present_value_discounting']
-    return np.exp(-(degredation + present_value_discount)*t)
+    return np.exp(-(degradation + present_value_discount)*t)
 
 
-def utility_price(t):
-    monthly_utility = re.sub("[^0-9|.]", "", config['utility_bill'])
-    #utility = re.sub("[^0-9|.]", "", config['utility_bill'])
-    return np.ones(t.shape)*float(monthly_utility) / 30.5
+#utility = re.sub("[^0-9|.]", "", config['utility_bill'])
 
 
 def predicted_output():
     pd.read_csv(config['past_year'], skiprows=5)
-    
 
 
-def average_degredation():
+def average_degradation():
     file_name = config['real_time_data']
 
     df = pd.read_csv(file_name)
@@ -99,12 +95,7 @@ def average_degredation():
     df_temp = pvlib.pvsystem.sapm_celltemp(df.poa, df.wind, df.Tamb, model = meta['temp_model'])
     df['Tcell'] = df_temp.temp_cell
 
-    # plot the AC power time series
-    fig, ax = plt.subplots(figsize=(4,3))
-    ax.plot(df.index, df.power, 'o', alpha = 0.05)
-    ax.set_ylim(0,7000)
-    fig.autofmt_xdate()
-    ax.set_ylabel('AC Power (W)')
+    print(df.energy[1000:1010])
 
     # Specify the keywords for the pvwatts model
     pvwatts_kws = {"poa_global" : df.poa,
@@ -140,3 +131,5 @@ def average_degredation():
 
     # yoy_rd is mean degradation rate per year.
     return yoy_rd
+
+average_degradation()

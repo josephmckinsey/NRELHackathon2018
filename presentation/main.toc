@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Biography}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Early Life}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{University Education}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Professorship}{6}{0}{2}
+\beamer@subsectionintoc {2}{4}{Fate}{7}{0}{2}
+\beamer@sectionintoc {3}{Mathematical Contributions}{8}{0}{3}
+\beamer@sectionintoc {4}{Interesting Facts}{9}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{10}{0}{5}

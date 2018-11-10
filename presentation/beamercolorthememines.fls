@@ -1,0 +1,5 @@
+PWD /home/joseph/Programming/latex/famous
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT beamercolorthememines.sty
+OUTPUT beamercolorthememines.log

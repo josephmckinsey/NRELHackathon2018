@@ -1,0 +1,52 @@
+%\usepackage{fontspec} 
+
+% COLORS
+\definecolor{minesblue}{RGB}{33, 49, 77}
+\definecolor{mineslightblue}{RGB}{146, 162, 189}
+\definecolor{minesorange}{RGB}{210, 74, 42}
+% Key Colors
+\definecolor{keyorange}{RGB}{210, 74, 42}
+\definecolor{keyblue}{RGB}{31, 102, 132}
+\definecolor{keygreen}{RGB}{30, 151, 79}
+\definecolor{keyred}{RGB}{180, 36, 94}
+
+\setbeamercolor*{structure}{bg=minesblue!20,fg=minesblue}
+
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=minesorange}
+\setbeamercolor*{palette quaternary}{fg=white,bg=minesorange}
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{alerted text}{use=structure,fg=red}
+%\setbeamercolor{alerted text}{use=structure,fg=structure.fg!50!black!80!black}
+
+\setbeamercolor{titlelike}{parent=palette primary,fg=structure.fg!50!black}
+\setbeamercolor{frametitle}{bg=minesblue!85,fg=white}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+
+% ALERTBLOCK COLOR
+
+%\setbeamercolor{block title alerted}{fg=white,bg=minesorange}
+%body
+%\setbeamercolor{block body alerted}{fg=black!90,bg=brown!60!yellow}
+%\setbeamercolor{block body text}{use=structure,fg=structure.fg!50!black!80!black}
+
+% FONTS
+%\setmainfont{Montserrat Light} 
+%\setsansfont{Montserrat Light}[BoldFont={Montserrat SemiBold}, ItalicFont={Montserrat Light Italic}, BoldItalicFont={Montserrat SemiBold Italic}]
+%\setmonofont{Fira Code}
+
+
+% Bullet Points
+\setbeamercolor*{item}{fg=minesorange}
+\setbeamercolor*{item projected}{fg=minesblue, bg=minesorange}
+% TOC
+\setbeamertemplate{section in toc}[default]
+\setbeamertemplate{subsection in toc}[square]
+% Main
+\setbeamertemplate{itemize items}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{enumerate subitem}[default]

@@ -14,7 +14,6 @@ start_date: 2010-11-10
 end_date: 2018-11-10
 
 api_key: zm83BYCLpsfGS1TqDwFOMMRb47gcMJ9KGqoSggdk
-monthly_utility_bill: $80
 
 present_value_discounting: 0.98
 solar_panel_area: 30
