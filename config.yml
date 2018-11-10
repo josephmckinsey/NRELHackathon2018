@@ -12,7 +12,6 @@ temp_model: open_rack_cell_polymerback
 start_date: 2010-11-10
 end_date: 2018-11-10
 
-utility_company: wer
 api_key: zm83BYCLpsfGS1TqDwFOMMRb47gcMJ9KGqoSggdk
 
 discounting_factor: 0.95
